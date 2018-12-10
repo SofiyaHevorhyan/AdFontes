@@ -10,13 +10,14 @@ class Endpoint:
         self.num_cashes = data[1]
 
         self.cashes = []
-        self.request = []
+        self.request = dict()
 
     def add_cash(self, cash_id, speed):
         self.cashes.append((cash_id, speed))
 
     def add_request(self, video, num_requests):
-        self.request.append((video, num_requests))
+        self.request[video] = num_requests
+        # self.request.append((video, num_requests))
 
     def time_to_dc(self):
         time = []

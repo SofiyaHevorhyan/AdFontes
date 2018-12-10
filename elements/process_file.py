@@ -45,6 +45,7 @@ def process(name):
             endpoints[data[1]].add_request(videos[data[0]].id, data[2])
 
         for end in endpoints:
+            end.request = list(end.request.items())
             end.request.sort(key=lambda x: x[1], reverse=True)
 
     return system, endpoints, cashes, videos
