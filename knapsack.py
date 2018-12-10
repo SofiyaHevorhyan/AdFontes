@@ -16,7 +16,7 @@ def knapsack(items, weight):
 
     for i in range(n):
         current_item = items[i]
-        v, w = current_item[0], current_item[1]
+        v, w, index_dict = current_item[0], current_item[1], current_item[2]
 
         work_row = two_row[index]
         prev_row = two_row[index - 1]
@@ -48,7 +48,7 @@ def knapsack(items, weight):
                     work_row.append(value3)
 
                     if value3 not in work_dict:
-                        work_dict[value3] = prev_dict[value2] + [i]
+                        work_dict[value3] = prev_dict[value2] + [index_dict]
 
         index = 0 if index else 1
         two_row[index] = []

@@ -46,6 +46,5 @@ def process(name):
 
         for end in endpoints:
             end.request.sort(key=lambda x: x[1], reverse=True)
-            print(end)
 
     return system, endpoints, cashes, videos
